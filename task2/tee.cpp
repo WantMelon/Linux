@@ -91,7 +91,6 @@ int main(int argc, char** argv)
         }
     }
 
-    //stdin_to_stdout();
     int fds[argc];
     fds[0] = 1;
     int counter = 0;
