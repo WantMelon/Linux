@@ -9,11 +9,11 @@ int main(int argc, char** argv) {
 
     pid_t pid;
     int status;
-    //char* new_env[] = {"SHELL", NULL};
+    char* new_env[] = {"TEST=environment variable", NULL};
     pid = fork();
     if (pid < 0) perror("Fork");
     if (pid == 0) {
-        status = execl("/bin/gedit", "gedit", "file.txt", (char *)NULL);
+        status = execl("/bin/gedit", "gedit", "file.txt", (char *)NULL, new_env);
         if (status == -1) perror("Exec");
     } else {
         cout << "Child pid: " << pid << endl;
